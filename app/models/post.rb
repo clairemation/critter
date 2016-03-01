@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
-  belongs_to :author, class_name: :user
-  has_many :feeds
+  belongs_to :user
+  has_many :follows
   has_many :favorite_posts
-  has_many :followers, through: :feeds, source: :user
+  has_many :followers, through: :follows, source: :user
 end

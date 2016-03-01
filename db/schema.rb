@@ -16,15 +16,12 @@ ActiveRecord::Schema.define(version: 20160301163317) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "feeds", force: true do |t|
-    t.integer  "user_id"
+  create_table "follows", force: true do |t|
+    t.integer  "subscriber_id"
     t.integer  "followed_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "feeds", ["followed_user_id"], name: "index_feeds_on_followed_user_id", using: :btree
-  add_index "feeds", ["user_id"], name: "index_feeds_on_user_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.integer  "user_id"
@@ -32,8 +29,6 @@ ActiveRecord::Schema.define(version: 20160301163317) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"
