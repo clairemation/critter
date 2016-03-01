@@ -1,0 +1,28 @@
+<script>
+
+$(document).ready(function() {
+  var species = $("#species").text();
+  var search_url = "http://api.pixplorer.co.uk/image?word=animal+" + species;
+  var request = $.ajax({
+    type: "GET",
+    url: search_url,
+    dataType: 'json'
+  });
+  request.done(function(response){
+    var img_url = response.images[0].imageurl;
+    var img_html = "<img src='" + img_url + "'>";
+    $("#avatar").append(img_html);
+  });
+})
+
+</script>
+
+<h1><%= @user.username %></h1>
+
+<div id="avatar"></div>
+
+<h2 id="species"><%= @user.species %></h2>
+<p>registered on <%= @user.created_at %></p>
+<p><%= @user.subscribers.count %> followers | following <%= @user.favorite_posters.count %> users</p>
+<h3><%= @user.username %>'s posts:</h3>
+<%= render @user.posts %>

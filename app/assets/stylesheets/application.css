@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+.post {
+  width: 500px;
+  border: 1px solid gray;
+  padding: 1em;
+  margin: 1em;
+}

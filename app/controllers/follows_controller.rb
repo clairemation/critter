@@ -1,4 +1,4 @@
-class FeedsController < ApplicationController
+class FollowsController < ApplicationController
 
   def index
     @posts = Post.all

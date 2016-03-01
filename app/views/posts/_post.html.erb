@@ -1,4 +1,4 @@
 <div class="post">
-  <p><%= post.body %></p>
-  <p class = "sig"><%= post.author.username %></p>
+  <p><%= post.text %></p>
+  <p class = "sig"><%= link_to post.user.username, post.user %></p>
 </div>
