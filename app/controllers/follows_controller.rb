@@ -5,7 +5,7 @@ class FollowsController < ApplicationController
   end
 
   def show
-    @feed = Feed.find(params[:id])
+    @posts = Follow.find_by(subscriber_id: params[:id])
   end
 
 end

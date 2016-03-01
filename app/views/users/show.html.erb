@@ -23,6 +23,6 @@ $(document).ready(function() {
 
 <h2 id="species"><%= @user.species %></h2>
 <p>registered on <%= @user.created_at %></p>
-<p><%= @user.subscribers.count %> followers | following <%= @user.favorite_posters.count %> users</p>
+<p><%= @user.subscribers.count %> followers | <%= link_to 'following',follow_path(@user.id)%> <%= @user.favorite_posters.count %> users</p>
 <h3><%= @user.username %>'s posts:</h3>
 <%= render @user.posts %>
