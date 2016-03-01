@@ -11,29 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301161544) do
+ActiveRecord::Schema.define(version: 20160301163317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "favorite_posts", force: true do |t|
-    t.integer "feed_id_id"
-    t.integer "followed_user_id"
-  end
-
-  add_index "favorite_posts", ["feed_id_id"], name: "index_favorite_posts_on_feed_id_id", using: :btree
-  add_index "favorite_posts", ["followed_user_id"], name: "index_favorite_posts_on_followed_user_id", using: :btree
-
   create_table "feeds", force: true do |t|
-    t.integer "user_id"
-    t.integer "followed_user_id"
+    t.integer  "user_id"
+    t.integer  "followed_user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
+  add_index "feeds", ["followed_user_id"], name: "index_feeds_on_followed_user_id", using: :btree
   add_index "feeds", ["user_id"], name: "index_feeds_on_user_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.integer  "user_id"
-    t.string   "text"
+    t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
