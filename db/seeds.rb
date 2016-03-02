@@ -21,7 +21,8 @@ rand(8).times do |i|
   end
 
   rand(2..7).times do |i|
-    u.subscriptions << Follow.new(followed_user_id: User.all.sample.id)
+    u.subscriptions << Follow.new(followed_user_id: rand(1..8))
   end
+  u.subscriptions.uniq!
 
 end

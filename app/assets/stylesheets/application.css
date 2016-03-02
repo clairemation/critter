@@ -14,14 +14,105 @@
  *= require_self
  */
 
+h1 a, h2 a, h1 a:visited, h2 a:visited {
+  text-decoration: none;
+  color: #1DA1F2;
+}
+
  body {
   font-family: 'Helvetica Neue';
+  background-color: #f5f8fa;
+  margin: 0;
+  text-align: center;
  }
 
-.post {
-  width: 500px;
-  border: 1px solid gray;
+ header {
+  background-color: #1DA1F2;
+  background: linear-gradient(90deg, #1DA1F2, #35CD94);
+  background: -moz-linear-gradient(90deg, #1DA1F2, #35CD94);
+  background: -o-linear-gradient(90deg, #1DA1F2, #35CD94);
+  background: -webkit-linear-gradient(0deg, #1DA1F2, #35CD94);
+  margin: 0;
   padding: 1em;
+ }
+
+ header h1, header h2 {
+  font-family: 'Helvetica Neue', Helvetica;
+  font-weight: 200;
+  height: 48px;
+  color: white;
+  margin: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+ }
+
+ header h2 {
+  opacity: .7;
+ }
+
+ header h1 a, header h1 a:visited {
+  color: white;
+ }
+
+ header img {
+  width: 50px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+ }
+
+ nav {
+  height: 50px;
+  background-color: white;
+  border-top: 1px solid rgb(225, 232, 237);
+  border-bottom: 1px solid rgb(225, 232, 237);
+ }
+
+nav a {
+  display: inline-block;
+  height: 50px;
+  width: 200px;
+  border-left: 1px solid rgb(225, 232, 237);
+  border-right: 1px solid rgb(225, 232, 237);
+  border-bottom: 5px solid #1DA1F2;
+  text-decoration: none;
+  color: #1DA1F2;
+  font-size: 1.2em;
+  font-weight: 200;
+  /*padding-top: 10px;*/
+}
+
+.post, .user {
+  display: inline-block;
+  width: 300;
+  border: 1px solid rgb(225, 232, 237);
+  border-radius: 4px;
+  padding: 5px 2em 1.5em 2em;
   margin: 1em;
-  box-shadow: 3px 3px 0 0 gray;
+  padding-top: 15px;
+  background-color: white;
+  position: relative;
+}
+
+.name {
+  display: inline-block;
+  position: absolute;
+  font-weight: bold;
+  left: 10px;
+  top: 10px;
+  float: left;
+}
+
+.name a, .name a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.date {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: gray;
+  font-size: small;
 }

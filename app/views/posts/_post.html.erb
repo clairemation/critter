@@ -1,4 +1,4 @@
 <div class="post">
+  <p><span class = "name"><%= link_to post.user.username, post.user %></span> <span class="date"><%= post.created_at %></span></p>
   <p><%= post.text %></p>
-  <p class = "sig"><%= link_to post.user.username, post.user %></p>
 </div>
