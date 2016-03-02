@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  def favorite_posts
+    ids = self.favorite_posters.pluck(:id)
+    Post.joins(:follows).where(follows: {subscriber_id: self.id}).where(follows: {followed_user_id: ids})
+  end
+
 end

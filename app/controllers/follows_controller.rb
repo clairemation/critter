@@ -5,7 +5,8 @@ class FollowsController < ApplicationController
   end
 
   def show
-    @posts = Follow.find_by(subscriber_id: params[:id])
+    owner = User.find(params[:id])
+    @posts = owner.favorite_posts
   end
 
 end

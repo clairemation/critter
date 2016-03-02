@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @posts = Post.where()
+    owner = User.find(params[:id])
+    @posts = owner.favorite_posts
   end
-
 end
