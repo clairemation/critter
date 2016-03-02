@@ -94,6 +94,14 @@ nav a {
   position: relative;
 }
 
+.user h2 {
+  font-size: 1em;
+}
+
+#avatar img {
+  border-radius: 5%;
+}
+
 .name {
   display: inline-block;
   position: absolute;
